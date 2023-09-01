@@ -10,4 +10,7 @@ return {
     lazy = false,
     config = function() require("mini.move").setup() end,
   },
+  {
+    "windwp/nvim-ts-autotag",
+  },
 }
