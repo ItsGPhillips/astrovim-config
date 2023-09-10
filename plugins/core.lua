@@ -24,11 +24,28 @@ return {
   {
     "L3MON4D3/LuaSnip",
     config = function(plugin, opts)
-      require "plugins.configs.luasnip" (plugin, opts) -- include the default astronvim config that calls the setup call
+      require "plugins.configs.luasnip"(plugin, opts) -- include the default astronvim config that calls the setup call
       -- add more custom luasnip configuration such as filetype extend or custom snippets
       local luasnip = require "luasnip"
       luasnip.filetype_extend("javascript", { "javascriptreact" })
     end,
+  },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+      filesystem = {
+        filtered_items = {
+          visible = true,
+          show_hidden_count = true,
+          hide_dotfiles = false,
+          hide_gitignored = false,
+          never_show = {},
+        },
+      },
+    },
+  },
+  {
+    "christoomey/vim-tmux-navigator",
   },
   -- {
   --   "windwp/nvim-autopairs",
